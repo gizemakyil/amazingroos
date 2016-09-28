@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+
+
+  <tbody>
+    <% @restaurants.each do |restaurant| %>
+
+        <div class='restaurant-alignment'>
+          <h2><%= link_to restaurant.name, restaurant %></h2>
+          <%= link_to image_tag(restaurant.picture, width: 300) ,  restaurant if restaurant.picture.present? %>
+        </div>
+
+    <% end %>
+
+
+<br>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

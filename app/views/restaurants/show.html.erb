@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<div class='hero'>
+  <div class="image">
+    <%= image_tag(@restaurant.picture, width: 300) if @restaurant.picture.present? %>
+  <h2>Special Offer</h2>
+  </p>
+  </div>
+
+<div class='left'>
+  <% @restaurant.menu_items.each do |mi| %>
+    <p><%= mi.name %> - <%= mi.price %></p>
+  <% end %>
+</div>
+
+<div class='right'>
+  <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+  <%= link_to 'Back', restaurants_path %>
+</div>
